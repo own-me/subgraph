@@ -1,1 +1,1 @@
-# own-me-subgraph
+# Own-Me Subgraph

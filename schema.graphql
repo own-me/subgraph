@@ -1,0 +1,7 @@
+type NudeNFT @entity {
+  id: ID!
+  owner: Bytes!
+  title: String!
+  imageUrl: String!
+  description: String!
+}
