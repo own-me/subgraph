@@ -77,4 +77,13 @@ export class NudeNFT extends Entity {
   set description(value: string) {
     this.set("description", Value.fromString(value));
   }
+
+  get tokenURI(): string {
+    let value = this.get("tokenURI");
+    return value.toString();
+  }
+
+  set tokenURI(value: string) {
+    this.set("tokenURI", Value.fromString(value));
+  }
 }

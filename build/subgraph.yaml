@@ -1,0 +1,25 @@
+specVersion: 0.0.2
+description: NudeNFT Subgraph for Own Me
+repository: https://github.com/the-digital-labs/own-me-subgraph
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: NudeNFT
+    network: mainnet
+    source:
+      address: "0x2E645469f354BB4F5c8a05B3b30A929361cf77eC"
+      abi: NudeNFT
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - NudeNFT
+      abis:
+        - name: NudeNFT
+          file: NudeNFT\abis\NudeNFT.json
+      eventHandlers:
+        - event: newNFTMinted(address,uint256,string)
+          handler: handleNewNFTMinted
+      file: NudeNFT\NudeNFT.wasm
